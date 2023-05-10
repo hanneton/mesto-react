@@ -1,4 +1,5 @@
-import { token, cohort } from "./constants.js";
+const token = "82ccf489-73be-49e6-aa2f-f3838da9c83f";
+const cohort = "cohort-64";
 
 class Api {
     constructor(urlBase, headers) {
