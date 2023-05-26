@@ -69,6 +69,13 @@ class Api {
             .then(this._checkResponse);
     }
 
+    setLikeStatus(id, isLiked) {
+        if (isLiked) {
+            return this.unlikeCard(id)
+        }
+        return this.likeCard(id)
+    }
+
     likeCard(id) {
         return fetch(`${this._urlBase}/cards/${id}/likes`, {
             method: 'PUT',

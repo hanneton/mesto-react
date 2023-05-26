@@ -1,11 +1,6 @@
 
 function PopupWithForm(props) {
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        props.onClose();
-    }
-
     function handleMouseDown(event) {
         if ((event.target === event.currentTarget) || (event.target.classList.contains('popup__close-button'))) {
             props.onClose();
@@ -17,7 +12,7 @@ function PopupWithForm(props) {
             onMouseDown={handleMouseDown}>
             <div className="popup__container">
                 <h2 className="popup__heading">{props.title}</h2>
-                <form onSubmit={handleSubmit} className="form" action="submit" noValidate>
+                <form onSubmit={props.onSubmit} className="form" action="submit" noValidate>
                     {props.children}
                     <button className="popup__save-button" type="submit">Сохранить</button>
                 </form>
