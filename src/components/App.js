@@ -43,6 +43,7 @@ function App() {
           return state.map((c) => c._id === card._id ? newCard : c)
         })
       })
+      .catch(err => console.log(err));
   }
 
   function handleCardDelete(card) {
@@ -52,6 +53,7 @@ function App() {
           return state.filter(c => c._id !== card._id);
         })
       })
+      .catch(err => console.log(err));
   }
 
   function handleCardClick(card) {
@@ -91,6 +93,7 @@ function App() {
         setCurrentUser(updatedUser);
         closeAllPopups();
       })
+      .catch(err => console.log(err));
   }
 
   function handleUpdateAvatar(avatar) {
@@ -99,6 +102,7 @@ function App() {
         setCurrentUser(updatedUser);
         closeAllPopups();
       })
+      .catch(err => console.log(err));
   }
 
   function handleAddPlaceSubmit(name, link) {
@@ -107,6 +111,7 @@ function App() {
         setCards([newCard, ...cards]);
         closeAllPopups();
       })
+      .catch(err => console.log(err));
   }
 
   return (

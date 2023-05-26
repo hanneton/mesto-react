@@ -5,6 +5,11 @@ function AddPlacePopup(props) {
     const [cardName, setCardName] = React.useState('');
     const [cardLink, setCardLink] = React.useState('');
 
+    React.useEffect(() => {
+        setCardName('');
+        setCardLink('');
+    }, [props.isOpen]);
+
     function handleSubmit(e) {
         e.preventDefault();
         props.onAddCard(cardName, cardLink);
